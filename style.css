@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Lora:wght@400;500;700&family=Macondo&display=swap');
+:root {
+    --lora-font: 'Lora', serif;
+    --macoda-font: 'Macondo', cursive;
+    --jetbrains-font: 'JetBrains Mono', monospace;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p {
+    margin: 0;
+}
+
+body {
+    background-color: #1b1b1b;
+    color: aliceblue;
+
+    display: grid;
+    place-content: start center;
+    min-height: 100vh;
+
+    font-family: var(--jetbrains-font);
+}
+
+@keyframes drop-text {
+    0% {
+        top: -3rem;
+    }
+    100% {
+        top: 6rem;
+    }
+}
+
+@keyframes fade-text {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.dropdown-text {
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: -3rem;
+    text-align: center;
+    transform: translate(-50%);
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    animation-duration: 1s, 0.5s;
+    animation-delay: 0s, 0.75s;
+    color: orangered;
+    max-width: 30%;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.main-grid {
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template-areas: 
+        'header header header header dataHandle dataHandle'
+        'titles titles titles titles titles titles'
+        'bars bars bars bars skills skills'
+        'mainStats mainStats subStats subStats skills skills'
+        'mainStats mainStats subStats subStats skills skills'
+        'mainStats mainStats savingThrows savingThrows skills skills'
+        'slots slots slots profs profs profs'
+        'inv inv inv spells spells spells';
+
+    width: min(95%, 70rem);
+    /* padding-block: 1rem; */
+    margin-inline: auto;
+
+    border-bottom: 2px solid #acacac;
+    border-left: 2px solid #acacac;
+}
+
+.main-grid-cell {
+    padding: 1rem;
+    border-top: 2px solid #acacac;
+    border-right: 2px solid #acacac;
+}
+
+/* DATA HANDLING CELL */
+
+.data-savings {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.upload-style {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.2rem;
+    border: 1px solid #acacac;
+    padding: 0.4rem;
+    cursor: pointer;
+    font-family: var(--jetbrains-font);
+}
+
+.download-style {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.2rem;
+    border: 1px solid #acacac;
+    padding: 0.4rem;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: var(--jetbrains-font);
+    background-color: transparent;
+    color: aliceblue;
+}
+
+/* Space Assigning */
+
+.header { grid-area: header; }
+.data-savings { grid-area: dataHandle; }
+.titles { grid-area: titles; }
+.bars { grid-area: bars; }
+.skills { grid-area: skills; }
+.main-stats { grid-area: mainStats; }
+.sub-stats { grid-area: subStats; }
+.saving-throws { grid-area: savingThrows; }
+.slots { grid-area: slots; }
+.proficiencies { grid-area: profs; }
+.inventory { grid-area: inv; }
+.spells { grid-area: spells; }

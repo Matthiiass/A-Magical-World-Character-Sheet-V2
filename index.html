@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Magic Character Sheet</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    </head>
+    <body>
+        <h1 class="dropdown-text">Test thing from top!</h1>
+        <div class="main-grid">
+            <div class="header main-grid-cell">
+                <h1>A Magical World</h1>
+                <h2>Character Sheet</h2>
+            </div>
+            <div class="data-savings main-grid-cell">
+                <label for="file-upload" class="upload-style">
+                    <i class="material-icons">file_upload</i> Import Data
+                </label>
+                <input id="file-upload" type="file" accept=".json" onchange="saveImport(this)">
+                <button id="file-export" type="button" class="download-style" onclick="exportData()">
+                    <i class="material-icons">file_download</i> Export Data
+                </button>
+            </div>
+            <div class="titles main-grid-cell">
+                <h1>Names, Crests, Backgrounds</h1>
+            </div>
+            <div class="bars main-grid-cell">
+                <h1>Bars</h1>
+            </div>
+            <div class="main-stats main-grid-cell">
+                <h1>Main Stats</h1>
+            </div>
+            <div class="sub-stats main-grid-cell">
+                <h1>Sub Stats</h1>
+            </div>
+            <div class="saving-throws main-grid-cell">
+                <h1>Saving Throws</h1>
+            </div>
+            <div class="skills main-grid-cell">
+                <h1>Skills</h1>
+            </div>
+            <div class="slots main-grid-cell">
+                <h1>Slots</h1>
+            </div>
+            <div class="proficiencies main-grid-cell">
+                <h1>Proficiencies</h1>
+            </div>
+            <div class="inventory main-grid-cell">
+                <h1>Inventory</h1>
+            </div>
+            <div class="spells main-grid-cell">
+                <h1>Spells</h1>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
