@@ -29,51 +29,50 @@ input[type="file"] {
     display: none;
 }
 
-input[type='text'] {
+input[type='text'],
+input[type="number"] {
     background-color: transparent;
     color: aliceblue;
     border: none;
     border-bottom: 1px solid aliceblue;
+    padding-bottom: 3px;
 }
 
 input {
     font-family: var(--jetbrains-font);
 }
 
+input:focus {
+    outline: none;
+    color: rgb(255, 70, 246);
+}
+
+.general select {
+    width: 141px;
+    background-color: transparent;
+    color: aliceblue;
+    border: none;
+    font-family: var(--jetbrains-font);
+}
+
+.general select:focus {
+    background-color: #303030;
+}
+
 /* ------------------------------------------- */
 /* DROPDOWN TEXT */
 
-@keyframes drop-text {
-    0% {
-        top: -3rem;
-    }
-    100% {
-        top: 6rem;
-    }
-}
-
-@keyframes fade-text {
-    0% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
-}
-
-.dropdown-text {
+.log-holder {
     position: absolute;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-end;
     z-index: 1;
-    left: 50%;
-    top: -3rem;
-    text-align: center;
-    transform: translate(-50%);
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-out;
-    animation-duration: 1s, 0.5s;
-    animation-delay: 0s, 0.75s;
-    color: orangered;
-    max-width: min(40rem, 30%);
+    bottom: 0;
+    left: 0;
+    padding-left: 0.3rem;
+    padding-bottom: 0.3rem;
+    width: 13rem;
 }
 
 /* ------------------------------------------- */
@@ -86,9 +85,9 @@ input {
         'header header header header dataHandle dataHandle'
         'titles titles titles titles titles titles'
         'bars bars bars bars skills skills'
-        'mainStats mainStats subStats subStats skills skills'
-        'mainStats mainStats subStats subStats skills skills'
-        'mainStats mainStats savingThrows savingThrows skills skills'
+        'mainStats subStats subStats subStats skills skills'
+        'mainStats subStats subStats subStats skills skills'
+        'mainStats savingThrows savingThrows savingThrows skills skills'
         'slots slots slots profs profs profs'
         'inv inv inv spells spells spells';
 
@@ -104,6 +103,12 @@ input {
     padding: 1rem;
     border-top: 2px solid #acacac;
     border-right: 2px solid #acacac;
+}
+
+.stat-holder {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 /* ------------------------------------------- */
@@ -169,16 +174,117 @@ input {
     font-size: 1.21rem;
 }
 
+
 .general select {
     width: 141px;
-    background-color: transparent;
-    color: aliceblue;
-    border: none;
 }
 
+/* ------------------------------------------- */
+/* BARS */
 
-.general option {
-    color: rgb(29, 29, 29);
+.bars {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+.bar-container {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 28rem;
+}
+
+.bar-outline {
+    width: 23rem;
+    border: 2px solid aliceblue;
+    height: 1.5rem;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.inner-bar {
+    width: 100%;
+    height: 100%;
+    transition: width 1s ease-out;
+}
+
+#health-bar {
+    background-color: #50ce65;
+}
+
+#mana-bar {
+    background-color: #59b6c7;
+}
+
+#sanity-bar {
+    background-color: #c15eda;
+}
+
+.bars-button-holder {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.bars-selection {
+    display: inline-flex;
+    gap: 0.3rem;
+}
+
+#healthButton { background-color: #50ce65; }
+
+.bars-manipulation {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+.bars-button {
+    font-family: var(--jetbrains-font);
+    font-size: 1.5rem;
+    padding: 0 0.5rem;
+    border: none;
+    border-radius: 5px;
+    color: aliceblue;
+    cursor: pointer;
+}
+
+.bar-select-button {
+    width: 6rem;
+    padding: 0.4rem 0;
+    color: aliceblue;
+    background-color: transparent;
+    border: 2px solid aliceblue;
+    border-radius: 7px;
+    font-family: var(--jetbrains-font);
+    transition: background-color 0.2s;
+    cursor: pointer;
+}
+
+.bars-unit {
+    width: 4rem;
+    font-size: 1.3rem;
+}
+
+#add-bars { background-color: rgb(42, 129, 39); border: 2px solid rgb(62, 168, 58); }
+#add-bars:hover { background-color: rgb(29, 95, 27); }
+#subtract-bars { background-color: #923434; border: 2px solid #b14848; }
+#subtract-bars:hover { background-color: #7a2929 }
+
+/* ------------------------------------------- */
+/* SUB STATS */
+
+.sub-stat-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.stat-input {
+    width: 4rem;
+    font-size: 1.25rem;
 }
 
 /* ------------------------------------------- */
