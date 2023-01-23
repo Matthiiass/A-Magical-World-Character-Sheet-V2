@@ -173,3 +173,7 @@ function selectedBarChange(button) {
         sBut.style.backgroundColor = "#c15eda"
     }
 }
+
+function calculateModifier(item) {
+    item.parentNode.querySelector('p').innerHTML = `(${Math.floor((parseInt(item.value) - 10) / 2)})`
+}

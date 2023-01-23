@@ -94,15 +94,53 @@
                     </div>
                     <div class="bars-selection">
                         <button type="button" class="bar-select-button" id="healthButton" onclick="selectedBarChange(this)">Health</button>
-                        <button type="button" class="bar-select-button" id="manaButton" onclick="selectedBarChange(this)">Cell Count</button>
+                        <button type="button" class="bar-select-button" id="manaButton" onclick="selectedBarChange(this)">Mana</button>
                         <button type="button" class="bar-select-button" id="sanityButton" onclick="selectedBarChange(this)">Sanity</button>
                     </div>
                 </div>
             </div>
             <div class="main-stats main-grid-cell">
-                <h1>Main Stats</h1>
+                <h2>Main Stats</h2>
+                <div class="main-stat-grid">
+                    <div class="stat-holder">
+                        <h3>Strength</h3>
+                        <div style="display: inline-flex; align-items: center; gap: 0.5rem; font-size: 1.1rem;">
+                            <input type="number" class="stat-input" min="0" value="10" onchange="calculateModifier(this)">
+                            <p>(0)</p>
+                        </div>
+                    </div>
+                    <div class="stat-holder">
+                        <h3>Dexterity</h3>
+                        <div style="display: inline-flex; align-items: center; gap: 0.5rem; font-size: 1.1rem;">
+                            <input type="number" class="stat-input" min="0" value="10" onchange="calculateModifier(this)">
+                            <p>(0)</p>
+                        </div>
+                    </div>
+                    <div class="stat-holder">
+                        <h3>Constitution</h3>
+                        <div style="display: inline-flex; align-items: center; gap: 0.5rem; font-size: 1.1rem;">
+                            <input type="number" class="stat-input" min="0" value="10" onchange="calculateModifier(this)">
+                            <p>(0)</p>
+                        </div>
+                    </div>
+                    <div class="stat-holder">
+                        <h3>Wisdom</h3>
+                        <div style="display: inline-flex; align-items: center; gap: 0.5rem; font-size: 1.1rem;">
+                            <input type="number" class="stat-input" min="0" value="10" onchange="calculateModifier(this)">
+                            <p>(0)</p>
+                        </div>
+                    </div>
+                    <div class="stat-holder">
+                        <h3>Charisma</h3>
+                        <div style="display: inline-flex; align-items: center; gap: 0.5rem; font-size: 1.1rem;">
+                            <input type="number" class="stat-input" min="0" value="10" onchange="calculateModifier(this)">
+                            <p>(0)</p>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="sub-stats main-grid-cell">
+                <h2>Sub Stats</h2>
                 <div class="sub-stat-grid">
                     <div class="stat-holder">
                         <h3>Level</h3>
@@ -129,6 +167,9 @@
                         <input type="number" class="stat-input" min="0" value="0">
                     </div>
                 </div>
+            </div>
+            <div class="currency main-grid-cell">
+                <h1>Currency</h1>
             </div>
             <div class="saving-throws main-grid-cell">
                 <h1>Saving Throws</h1>

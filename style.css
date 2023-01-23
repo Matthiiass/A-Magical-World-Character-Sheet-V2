@@ -87,7 +87,7 @@ input:focus {
         'bars bars bars bars skills skills'
         'mainStats subStats subStats subStats skills skills'
         'mainStats subStats subStats subStats skills skills'
-        'mainStats savingThrows savingThrows savingThrows skills skills'
+        'mainStats currency currency savingThrows skills skills'
         'slots slots slots profs profs profs'
         'inv inv inv spells spells spells';
 
@@ -274,7 +274,22 @@ input:focus {
 #subtract-bars:hover { background-color: #7a2929 }
 
 /* ------------------------------------------- */
+/* MAIN STATS */
+
+.main-stat-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+/* ------------------------------------------- */
 /* SUB STATS */
+
+.sub-stats {
+    display: inline-flex;
+    justify-content: center;
+    flex-direction: column;
+}
 
 .sub-stat-grid {
     display: grid;
@@ -297,6 +312,7 @@ input:focus {
 .skills { grid-area: skills; }
 .main-stats { grid-area: mainStats; }
 .sub-stats { grid-area: subStats; }
+.currency { grid-area: currency; }
 .saving-throws { grid-area: savingThrows; }
 .slots { grid-area: slots; }
 .proficiencies { grid-area: profs; }
