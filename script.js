@@ -177,3 +177,38 @@ function selectedBarChange(button) {
 function calculateModifier(item) {
     item.parentNode.querySelector('p').innerHTML = `(${Math.floor((parseInt(item.value) - 10) / 2)})`
 }
+
+function healthSavingThrows(val) {
+    var items = document.querySelectorAll('.heart')
+    for (var i = 0; i < items.length; i++) {
+        if (i < val) {
+            items[i].style.backgroundColor = '#62923a'
+            items[i].querySelector('img').style.opacity = 1
+        }
+        else {
+            items[i].style.backgroundColor = 'transparent'
+            items[i].querySelector('img').style.opacity = 0
+        }
+    }
+}
+
+function deathSavingThrows(val) {
+    var items = document.querySelectorAll('.death')
+    for (var i = 0; i < items.length; i++) {
+        if (i < val) {
+            items[i].style.backgroundColor = '#923a3a'
+            items[i].querySelector('img').style.opacity = 1
+        }
+        else {
+            items[i].style.backgroundColor = 'transparent'
+            items[i].querySelector('img').style.opacity = 0
+        }
+    }
+}
+
+function updateBackgroundSkill(valueBox) {
+    var num = valueBox.value
+    if (document.querySelector('#backgroundSelect').value == "student") {
+        document.querySelector('.historySkill').innerHTML = num
+    }
+}

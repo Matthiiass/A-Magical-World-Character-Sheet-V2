@@ -287,7 +287,7 @@ input:focus {
 
 .sub-stats {
     display: inline-flex;
-    justify-content: center;
+    justify-content: space-around;
     flex-direction: column;
 }
 
@@ -300,6 +300,76 @@ input:focus {
 .stat-input {
     width: 4rem;
     font-size: 1.25rem;
+}
+
+/* ------------------------------------------- */
+/* SAVING THROWS */
+
+.saving-throws {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.saving-holder {
+    display: inline-flex;
+    align-items: center;
+}
+
+.saving-box {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: 50%;
+    border: 3px solid aliceblue;
+    cursor: pointer;
+}
+.saving-line {
+    width: 15px;
+    height: 3px;
+    background-color: aliceblue;
+}
+
+.saving-icon {
+    width: 1.4rem;
+    opacity: 0;
+}
+
+.reset-box {
+    background-color: aliceblue;
+    padding: 0.35rem;
+}
+
+/* ------------------------------------------- */
+/* SKILLS */
+
+.skills {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.skills h3 {
+    text-decoration: underline;
+}
+
+.skills h4 {
+    font-weight: normal;
+}
+
+.skills p {
+    font-weight: bold;
+}
+
+.skill-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.skill-text {
+    font-size: 1.1rem;
 }
 
 /* ------------------------------------------- */

@@ -35,7 +35,7 @@
                 </div>
                 <div class="general-item">
                     <h3>Magic Crest</h3>
-                    <select>
+                    <select id="crestSelect">
                         <option value="saimiri">Saimiri</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -44,7 +44,7 @@
                 </div>
                 <div class="general-item">
                     <h3>Background</h3>
-                    <select>
+                    <select id="backgroundSelect">
                         <option value="librarian">Librarian</option>
                         <option value="alchemist">Alchemist</option>
                         <option value="student">Student</option>
@@ -100,38 +100,38 @@
                 </div>
             </div>
             <div class="main-stats main-grid-cell">
-                <h2>Main Stats</h2>
+                <h3>Main Stats</h3>
                 <div class="main-stat-grid">
                     <div class="stat-holder">
-                        <h3>Strength</h3>
+                        <h4>Strength</h4>
                         <div style="display: inline-flex; align-items: center; gap: 0.5rem; font-size: 1.1rem;">
                             <input type="number" class="stat-input" min="0" value="10" onchange="calculateModifier(this)">
                             <p>(0)</p>
                         </div>
                     </div>
                     <div class="stat-holder">
-                        <h3>Dexterity</h3>
+                        <h4>Dexterity</h4>
                         <div style="display: inline-flex; align-items: center; gap: 0.5rem; font-size: 1.1rem;">
                             <input type="number" class="stat-input" min="0" value="10" onchange="calculateModifier(this)">
                             <p>(0)</p>
                         </div>
                     </div>
                     <div class="stat-holder">
-                        <h3>Constitution</h3>
+                        <h4>Constitution</h4>
                         <div style="display: inline-flex; align-items: center; gap: 0.5rem; font-size: 1.1rem;">
                             <input type="number" class="stat-input" min="0" value="10" onchange="calculateModifier(this)">
                             <p>(0)</p>
                         </div>
                     </div>
                     <div class="stat-holder">
-                        <h3>Wisdom</h3>
+                        <h4>Wisdom</h4>
                         <div style="display: inline-flex; align-items: center; gap: 0.5rem; font-size: 1.1rem;">
                             <input type="number" class="stat-input" min="0" value="10" onchange="calculateModifier(this)">
                             <p>(0)</p>
                         </div>
                     </div>
                     <div class="stat-holder">
-                        <h3>Charisma</h3>
+                        <h4>Charisma</h4>
                         <div style="display: inline-flex; align-items: center; gap: 0.5rem; font-size: 1.1rem;">
                             <input type="number" class="stat-input" min="0" value="10" onchange="calculateModifier(this)">
                             <p>(0)</p>
@@ -140,30 +140,30 @@
                 </div>
             </div>
             <div class="sub-stats main-grid-cell">
-                <h2>Sub Stats</h2>
+                <h3>Sub Stats</h3>
                 <div class="sub-stat-grid">
                     <div class="stat-holder">
-                        <h3>Level</h3>
+                        <h4>Level</h4>
                         <input type="number" class="stat-input" min="0" value="1">
                     </div>
                     <div class="stat-holder">
-                        <h3>Speed</h3>
+                        <h4>Speed</h4>
                         <input type="number" class="stat-input" min="0" value="7">
                     </div>
                     <div class="stat-holder">
-                        <h3>Initiative</h3>
+                        <h4>Initiative</h4>
                         <input type="number" class="stat-input" min="0" value="0">
                     </div>
                     <div class="stat-holder">
-                        <h3>Armour</h3>
+                        <h4>Armour</h4>
                         <input type="number" class="stat-input" min="0" value="0">
                     </div>
                     <div class="stat-holder">
-                        <h3>Intelligence</h3>
-                        <input type="number" class="stat-input" min="0" value="0">
+                        <h4>Intelligence</h4>
+                        <input type="number" class="stat-input" min="0" value="0" onchange="updateBackgroundSkill(this)">
                     </div>
                     <div class="stat-holder">
-                        <h3>Proficiency Bonus</h3>
+                        <h4>Proficiency Bonus</h4>
                         <input type="number" class="stat-input" min="0" value="0">
                     </div>
                 </div>
@@ -172,10 +172,121 @@
                 <h1>Currency</h1>
             </div>
             <div class="saving-throws main-grid-cell">
-                <h1>Saving Throws</h1>
+                <h3>Death Saves</h3>
+                <div class="saving-holder">
+                    <div class="saving-box reset-box" onclick="healthSavingThrows(0)"></div>
+                    <div class="saving-line"></div>
+                    <div class="saving-box heart" onclick="healthSavingThrows(1)">
+                        <img src="./resources/heart.png" class="saving-icon">
+                    </div>
+                    <div class="saving-line"></div>
+                    <div class="saving-box heart" onclick="healthSavingThrows(2)">
+                        <img src="./resources/heart.png" class="saving-icon">
+                    </div>
+                    <div class="saving-line"></div>
+                    <div class="saving-box heart" onclick="healthSavingThrows(3)">
+                        <img src="./resources/heart.png" class="saving-icon">
+                    </div>
+                </div>
+                <div class="saving-holder">
+                    <div class="saving-box reset-box" onclick="deathSavingThrows(0)"></div>
+                    <div class="saving-line"></div>
+                    <div class="saving-box death" onclick="deathSavingThrows(1)">
+                        <img src="./resources/skull.png" class="saving-icon">
+                    </div>
+                    <div class="saving-line"></div>
+                    <div class="saving-box death" onclick="deathSavingThrows(2)">
+                        <img src="./resources/skull.png" class="saving-icon">
+                    </div>
+                    <div class="saving-line"></div>
+                    <div class="saving-box death" onclick="deathSavingThrows(3)">
+                        <img src="./resources/skull.png" class="saving-icon">
+                    </div>
+                </div>
             </div>
             <div class="skills main-grid-cell">
-                <h1>Skills</h1>
+                <h3>Skills</h3>
+                <div class="skill-grid">
+                    <div class="stat-holder">
+                        <h4>Acrobatics</h4>
+                        <p class="skill-text">0</p>
+                    </div>
+                    <div class="stat-holder">
+                        <h4>Athletics</h4>
+                        <p class="skill-text">0</p>
+                    </div>
+                    <div class="stat-holder">
+                        <h4>Deception</h4>
+                        <p class="skill-text">0</p>
+                    </div>
+                    <div class="stat-holder">
+                        <h4>Insight</h4>
+                        <p class="skill-text">0</p>
+                    </div>
+                    <div class="stat-holder">
+                        <h4>Intimidation</h4>
+                        <p class="skill-text">0</p>
+                    </div>
+                    <div class="stat-holder">
+                        <h4>Medicine</h4>
+                        <p class="skill-text">0</p>
+                    </div>
+                    <div class="stat-holder">
+                        <h4>Perception</h4>
+                        <p class="skill-text">0</p>
+                    </div>
+                    <div class="stat-holder">
+                        <h4>Performance</h4>
+                        <p class="skill-text">0</p>
+                    </div>
+                    <div class="stat-holder">
+                        <h4>Persuasion</h4>
+                        <p class="skill-text">0</p>
+                    </div>
+                    <div class="stat-holder">
+                        <h4>Sleight of Hand</h4>
+                        <p class="skill-text">0</p>
+                    </div>
+                    <div class="stat-holder">
+                        <h4>Stealth</h4>
+                        <p class="skill-text">0</p>
+                    </div>
+                    <div class="stat-holder">
+                        <h4>Survival</h4>
+                        <p class="skill-text">0</p>
+                    </div>
+                </div>
+                <h3>Background Skills</h3>
+                <div class="skill-grid">
+                    <div class="stat-holder">
+                        <h4>Arcana</h4>
+                        <p class="skill-text">0</p>
+                    </div>
+                    <div class="stat-holder">
+                        <h4>Geography</h4>
+                        <p class="skill-text">0</p>
+                    </div>
+                    <div class="stat-holder">
+                        <h4>Investigation</h4>
+                        <p class="skill-text">0</p>
+                    </div>
+                    <div class="stat-holder">
+                        <h4>Nature</h4>
+                        <p class="skill-text">0</p>
+                    </div>
+                    <div class="stat-holder">
+                        <h4>History</h4>
+                        <p class="skill-text historySkill">0</p>
+                    </div>
+                    <div class="stat-holder">
+                        <h4>Law</h4>
+                        <p class="skill-text">0</p>
+                    </div>
+                    <div class="stat-holder">
+                        <h4>Technology</h4>
+                        <p class="skill-text">0</p>
+                    </div>
+                </div>
             </div>
             <div class="slots main-grid-cell">
                 <h1>Slots</h1>
