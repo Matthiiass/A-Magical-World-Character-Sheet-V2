@@ -9,6 +9,420 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     </head>
     <body>
+        <div class="notice-overlay">
+            <h1>Notice!</h1>
+            <p>Both this sheet and the TTRPG are a work in progress.<br>Things are subject to (and most likely will) change!</p>
+            <button type="button" onclick="dimissNotice(this.parentNode)">Dismiss</button>
+        </div>
+        <inactive-model class="phoenix-modal">
+            <div class="modal-content">
+                <h1>Phoenix Magic Crest</h1>
+                <h2>Unique Skills</h2>
+                <div class="unique-skills-holder">
+                    <ul>
+                        <li>When you die, you turn into ash instead of dying. User's may revive from this ash as long as it remains undistrubed
+                            <ul>
+                                <li>Destroying ash will result in a full death</li>
+                                <li>Revival/Healing magic will not work when in a ash state</li>
+                            </ul>
+                        </li>
+                        <li>User can concentrate to purge poison type diseases from within themselves</li>
+                    </ul>
+                </div>
+                <h2>Weaknesses</h2>
+                <div class="weaknesses-holder">
+                    <ul>
+                        <li>Water Magic (Heavy)</li>
+                        <li>Ice Magic (Medium)</li>
+                        <li>Gravity Magic (Medium)</li>
+                    </ul>
+                </div>
+                <h2>Resistances</h2>
+                <div class="resistances-holder">
+                    <ul>
+                        <li>Death Magic (Heavy)</li>
+                        <li>Fire Magic (Medium)</li>
+                        <li>Explosion Magic (Light)</li>
+                    </ul>
+                </div>
+                <h2>Avaliable Magics</h2>
+                <div class="avaliable-magics-holder">
+                    <ul>
+                        <li>Fire</li>
+                        <li>Air</li>
+                        <li>Explosion</li>
+                        <li>Love</li>
+                        <li>Life</li>
+                    </ul>
+                </div>
+            </div>
+        </inactive-model>
+        <inactive-model class="dragon-modal">
+            <div class="modal-content">
+                <h1>Dragon Magic Crest</h1>
+                <h2>Unique Skills</h2>
+                <div class="unique-skills-holder">
+                    <ul>
+                        <li>Very heavy resistance to non-silvered piercing and slashing damage
+                            <ul>
+                                <li>If hit by bludgeon, magic or silvered damage, resistance is lost for a turn</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <h2>Weaknesses</h2>
+                <div class="weaknesses-holder">
+                    <ul>
+                        <li>Fairy Magic (Heavy)</li>
+                        <li>Shadow Magic (Heavy)</li>
+                    </ul>
+                </div>
+                <h2>Resistances</h2>
+                <div class="resistances-holder">
+                    <ul>
+                        <li>Fire Magic (Medium)</li>
+                        <li>Water Magic (Medium)</li>
+                        <li>Air Magic (Immune)</li>
+                        <li>Earth Magic (Medium)</li>
+                    </ul>
+                </div>
+                <h2>Avaliable Magics</h2>
+                <div class="avaliable-magics-holder">
+                    <ul>
+                        <li>Fire</li>
+                        <li>Explosion</li>
+                        <li>Air</li>
+                        <li>Lightning</li>
+                        <li>Sound</li>
+                        <li>Steam/Smoke</li>
+                    </ul>
+                </div>
+            </div>
+        </inactive-model>
+        <inactive-model class="basilisk-modal">
+            <div class="modal-content">
+                <h1>Basilisk Magic Crest</h1>
+                <h2>Unique Skills</h2>
+                <div class="unique-skills-holder">
+                    <ul>
+                        <li>Hitting enemies with heavy attacks inflicts the fear debuff</li>
+                        <li>Small enemies in a 20ft (4 tile) radius are automatically inflicted with fear</li>
+                        <li>Killing an enemy will result in enemies within a 15f (3 tile) radius of the killed enemy being inflicted with fear</li>
+                    </ul>
+                </div>
+                <h2>Weaknesses</h2>
+                <div class="weaknesses-holder">
+                    <ul>
+                        <li>[PLACEHOLDER]</li>
+                    </ul>
+                </div>
+                <h2>Resistances</h2>
+                <div class="resistances-holder">
+                    <ul>
+                        <li>[PLACEHOLDER]</li>
+                    </ul>
+                </div>
+                <h2>Avaliable Magics</h2>
+                <div class="avaliable-magics-holder">
+                    <ul>
+                        <li>Water</li>
+                        <li>Ice</li>
+                        <li>Earth</li>
+                        <li>Lightning</li>
+                        <li>Nature</li>
+                        <li>Gravity</li>
+                        <li>Space</li>
+                    </ul>
+                </div>
+            </div>
+        </inactive-model>
+        <inactive-model class="unicorn-modal">
+            <div class="modal-content">
+                <h1>Unicorn Magic Crest</h1>
+                <h2>Unique Skills</h2>
+                <div class="unique-skills-holder">
+                    <ul>
+                        <li>Naturally very high mana count</li>
+                        <li>Can transfer mana to teammates within 60ft (12 tile) radius of the user</li>
+                    </ul>
+                </div>
+                <h2>Weaknesses</h2>
+                <div class="weaknesses-holder">
+                    <ul>
+                        <li>[PLACEHOLDER]</li>
+                    </ul>
+                </div>
+                <h2>Resistances</h2>
+                <div class="resistances-holder">
+                    <ul>
+                        <li>[PLACEHOLDER]</li>
+                    </ul>
+                </div>
+                <h2>Avaliable Magics</h2>
+                <div class="avaliable-magics-holder">
+                    <ul>
+                        <li>Light</li>
+                        <li>Aurora</li>
+                        <li>Dream</li>
+                        <li>Fairy</li>
+                        <li>Love</li>
+                    </ul>
+                </div>
+            </div>
+        </inactive-model>
+        <inactive-model class="merfolk-modal">
+            <div class="modal-content">
+                <h1>Merfolk Magic Crest</h1>
+                <h2>Unique Skills</h2>
+                <div class="unique-skills-holder">
+                    <ul>
+                        <li>Can breathe underwater</li>
+                        <li>Proficient in all charisma based skills</li>
+                    </ul>
+                </div>
+                <h2>Weaknesses</h2>
+                <div class="weaknesses-holder">
+                    <ul>
+                        <li>[PLACEHOLDER]</li>
+                    </ul>
+                </div>
+                <h2>Resistances</h2>
+                <div class="resistances-holder">
+                    <ul>
+                        <li>[PLACEHOLDER]</li>
+                    </ul>
+                </div>
+                <h2>Avaliable Magics</h2>
+                <div class="avaliable-magics-holder">
+                    <ul>
+                        <li>Water</li>
+                        <li>Ice</li>
+                        <li>Illusion</li>
+                        <li>Ghost</li>
+                        <li>Nightmare</li>
+                        <li>Sound</li>
+                    </ul>
+                </div>
+            </div>
+        </inactive-model>
+        <inactive-model class="fae-modal">
+            <div class="modal-content">
+                <h1>Fae Magic Crest</h1>
+                <h2>Unique Skills</h2>
+                <div class="unique-skills-holder">
+                    <ul>
+                        <li>Always moves first in combat</li>
+                        <li>Can teleport 15ft (3 tiles) without the use of magic</li>
+                    </ul>
+                </div>
+                <h2>Weaknesses</h2>
+                <div class="weaknesses-holder">
+                    <ul>
+                        <li>[PLACEHOLDER]</li>
+                    </ul>
+                </div>
+                <h2>Resistances</h2>
+                <div class="resistances-holder">
+                    <ul>
+                        <li>[PLACEHOLDER]</li>
+                    </ul>
+                </div>
+                <h2>Avaliable Magics</h2>
+                <div class="avaliable-magics-holder">
+                    <ul>
+                        <li>Light</li>
+                        <li>Aurora</li>
+                        <li>Illusion</li>
+                        <li>Ghost</li>
+                        <li>Dream</li>
+                        <li>Nature</li>
+                        <li>Fairy</li>
+                    </ul>
+                </div>
+            </div>
+        </inactive-model>
+        <inactive-model class="chimera-modal">
+            <div class="modal-content">
+                <h1>Chimera Magic Crest</h1>
+                <h2>Unique Skills</h2>
+                <div class="unique-skills-holder">
+                    <ul>
+                        <li>Spells over X cost have a chance to result in a magic surge
+                            <ul>
+                                <li>Rolls equal to 10 or below result in a surge</li>
+                                <li>DM can force a surge at any point</li>
+                            </ul>
+                        </li>
+                        <li>3 exclusive magic types: Fusion, Spatial and Time</li>
+                    </ul>
+                </div>
+                <h2>Weaknesses</h2>
+                <div class="weaknesses-holder">
+                    <ul>
+                        <li>[PLACEHOLDER]</li>
+                    </ul>
+                </div>
+                <h2>Resistances</h2>
+                <div class="resistances-holder">
+                    <ul>
+                        <li>[PLACEHOLDER]</li>
+                    </ul>
+                </div>
+                <h2>Avaliable Magics</h2>
+                <div class="avaliable-magics-holder">
+                    <ul>
+                        <li>Fire</li>
+                        <li>Water</li>
+                        <li>Air</li>
+                        <li>Earth</li>
+                        <li>Fusion</li>
+                        <li>Chaos</li>
+                        <li>Order</li>
+                        <li>Spatial</li>
+                        <li>Time</li>
+                    </ul>
+                </div>
+            </div>
+        </inactive-model>
+        <inactive-model class="lich-modal">
+            <div class="modal-content">
+                <h1>Lich Magic Crest</h1>
+                <h2>Unique Skills</h2>
+                <div class="unique-skills-holder">
+                    <ul>
+                        <li>Hitting enemies with magic inflicts the "Necrotic Poison" debuff</li>
+                        <li>Life and Love magic deals damage instead of healing</li>
+                    </ul>
+                </div>
+                <h2>Weaknesses</h2>
+                <div class="weaknesses-holder">
+                    <ul>
+                        <li>[PLACEHOLDER]</li>
+                    </ul>
+                </div>
+                <h2>Resistances</h2>
+                <div class="resistances-holder">
+                    <ul>
+                        <li>[PLACEHOLDER]</li>
+                    </ul>
+                </div>
+                <h2>Avaliable Magics</h2>
+                <div class="avaliable-magics-holder">
+                    <ul>
+                        <li>Earth</li>
+                        <li>Dark</li>
+                        <li>Shadow</li>
+                        <li>Nightmare</li>
+                        <li>Death</li>
+                    </ul>
+                </div>
+            </div>
+        </inactive-model>
+        <inactive-model class="angel-modal">
+            <div class="modal-content">
+                <h1>Angel Magic Crest</h1>
+                <h2>Unique Skills</h2>
+                <div class="unique-skills-holder">
+                    <ul>
+                        <li>Teammates heal 10% of their max HP at the start of each round if they are within a 20ft (4 tile) radius of the user</li>
+                    </ul>
+                </div>
+                <h2>Weaknesses</h2>
+                <div class="weaknesses-holder">
+                    <ul>
+                        <li>[PLACEHOLDER]</li>
+                    </ul>
+                </div>
+                <h2>Resistances</h2>
+                <div class="resistances-holder">
+                    <ul>
+                        <li>[PLACEHOLDER]</li>
+                    </ul>
+                </div>
+                <h2>Avaliable Magics</h2>
+                <div class="avaliable-magics-holder">
+                    <ul>
+                        <li>Water</li>
+                        <li>Air</li>
+                        <li>Light</li>
+                        <li>Order</li>
+                        <li>Aurora</li>
+                        <li>Life</li>
+                        <li>Gravity</li>
+                    </ul>
+                </div>
+            </div>
+        </inactive-model>
+        <inactive-model class="devil-modal">
+            <div class="modal-content">
+                <h1>Devil Magic Crest</h1>
+                <h2>Unique Skills</h2>
+                <div class="unique-skills-holder">
+                    <ul>
+                        <li>User can perform a persuasion check to influence the thoughts of/message living creatures
+                            <ul>
+                                <li>Within a 120ft (24 tile) radius if the user has direct line of sight</li>
+                                <li>Within a 30ft (6 tile) radius if the user has no line of sight</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <h2>Weaknesses</h2>
+                <div class="weaknesses-holder">
+                    <ul>
+                        <li>[PLACEHOLDER]</li>
+                    </ul>
+                </div>
+                <h2>Resistances</h2>
+                <div class="resistances-holder">
+                    <ul>
+                        <li>[PLACEHOLDER]</li>
+                    </ul>
+                </div>
+                <h2>Avaliable Magics</h2>
+                <div class="avaliable-magics-holder">
+                    <ul>
+                        <li>Fire</li>
+                        <li>Earth</li>
+                        <li>Dark</li>
+                        <li>Steam/Smoke</li>
+                        <li>Chaos</li>
+                        <li>Shadow</li>
+                        <li>Love</li>
+                    </ul>
+                </div>
+            </div>
+        </inactive-model>
+        <inactive-model class="none-modal">
+            <div class="modal-content">
+                <h1>No Magic Crest</h1>
+                <h2>Unique Skills</h2>
+                <div class="unique-skills-holder">
+                    <ul>
+                        <li>User is unable to cast magic</li>
+                        <li>Unable to be inflicted with magic based diseases</li>
+                        <li>Proficient in all magic weapons</li>
+                        <li>Can work out a magic items effects in an hour</li>
+                        <li>Has the exclusive student background</li>
+                    </ul>
+                </div>
+                <h2>Weaknesses</h2>
+                <div class="weaknesses-holder">
+                    <ul>
+                        <li>[PLACEHOLDER]</li>
+                    </ul>
+                </div>
+                <h2>Resistances</h2>
+                <div class="resistances-holder">
+                    <ul>
+                        <li>[PLACEHOLDER]</li>
+                    </ul>
+                </div>
+            </div>
+        </inactive-model>
+        <div class="modal" onclick="showCrestHelp()">
+            
+        </div>
         <div class="log-holder"></div>
         <div class="main-grid">
             <div class="header main-grid-cell">
@@ -27,19 +441,26 @@
             <div class="general main-grid-cell">
                 <div class="general-item">
                     <h3>Name</h3>
-                    <input type="text">
+                    <input type="text" id="character-name-input">
                 </div>
                 <div class="general-item">
                     <h3>Player Name</h3>
-                    <input type="text">
+                    <input type="text" id="player-name-input">
                 </div>
                 <div class="general-item">
-                    <h3>Magic Crest</h3>
+                    <h3 class="header-with-help">Magic Crest <i class="material-icons help-icon" onclick="showCrestHelp()" title="Properties">help</i></h3>
                     <select id="crestSelect">
-                        <option value="saimiri">Saimiri</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
+                        <option value="angel">Angel</option>
+                        <option value="basilisk">Basilisk</option>
+                        <option value="chimera">Chimera</option>
+                        <option value="devil">Devil</option>
+                        <option value="dragon">Dragon</option>
+                        <option value="fae">Fae</option>
+                        <option value="lich">Lich</option>
+                        <option value="merfolk">Merfolk</option>
+                        <option value="phoenix">Phoenix</option>
+                        <option value="unicorn">Unicorn</option>
+                        <option value="none">None</option>
                     </select>
                 </div>
                 <div class="general-item">
@@ -102,35 +523,35 @@
             <div class="main-stats main-grid-cell">
                 <h3>Main Stats</h3>
                 <div class="main-stat-grid">
-                    <div class="stat-holder">
+                    <div class="stat-holder str-stat">
                         <h4>Strength</h4>
                         <div style="display: inline-flex; align-items: center; gap: 0.5rem; font-size: 1.1rem;">
                             <input type="number" class="stat-input" min="0" value="10" onchange="calculateModifier(this)">
                             <p>(0)</p>
                         </div>
                     </div>
-                    <div class="stat-holder">
+                    <div class="stat-holder dex-stat">
                         <h4>Dexterity</h4>
                         <div style="display: inline-flex; align-items: center; gap: 0.5rem; font-size: 1.1rem;">
                             <input type="number" class="stat-input" min="0" value="10" onchange="calculateModifier(this)">
                             <p>(0)</p>
                         </div>
                     </div>
-                    <div class="stat-holder">
+                    <div class="stat-holder con-stat">
                         <h4>Constitution</h4>
                         <div style="display: inline-flex; align-items: center; gap: 0.5rem; font-size: 1.1rem;">
                             <input type="number" class="stat-input" min="0" value="10" onchange="calculateModifier(this)">
                             <p>(0)</p>
                         </div>
                     </div>
-                    <div class="stat-holder">
+                    <div class="stat-holder wis-stat">
                         <h4>Wisdom</h4>
                         <div style="display: inline-flex; align-items: center; gap: 0.5rem; font-size: 1.1rem;">
                             <input type="number" class="stat-input" min="0" value="10" onchange="calculateModifier(this)">
                             <p>(0)</p>
                         </div>
                     </div>
-                    <div class="stat-holder">
+                    <div class="stat-holder cha-stat">
                         <h4>Charisma</h4>
                         <div style="display: inline-flex; align-items: center; gap: 0.5rem; font-size: 1.1rem;">
                             <input type="number" class="stat-input" min="0" value="10" onchange="calculateModifier(this)">
@@ -164,7 +585,7 @@
                     </div>
                     <div class="stat-holder">
                         <h4>Proficiency Bonus</h4>
-                        <input type="number" class="stat-input" min="0" value="0">
+                        <input type="number" class="stat-input prof-bonus" min="0" value="0" onchange="updateSkills()">
                     </div>
                 </div>
             </div>
@@ -206,58 +627,58 @@
             </div>
             <div class="skills main-grid-cell">
                 <h3>Skills</h3>
-                <div class="skill-grid">
-                    <div class="stat-holder">
+                <div class="skill-grid main-skill-grid">
+                    <div class="stat-holder acrobatics-stat" onclick="changeProfSkill(this)">
                         <h4>Acrobatics</h4>
                         <p class="skill-text">0</p>
                     </div>
-                    <div class="stat-holder">
+                    <div class="stat-holder athletics-stat" onclick="changeProfSkill(this)" onclick="changeProfSkill(this)">
                         <h4>Athletics</h4>
                         <p class="skill-text">0</p>
                     </div>
-                    <div class="stat-holder">
+                    <div class="stat-holder deception-stat" onclick="changeProfSkill(this)">
                         <h4>Deception</h4>
                         <p class="skill-text">0</p>
                     </div>
-                    <div class="stat-holder">
+                    <div class="stat-holder insight-stat" onclick="changeProfSkill(this)">
                         <h4>Insight</h4>
                         <p class="skill-text">0</p>
                     </div>
-                    <div class="stat-holder">
+                    <div class="stat-holder intimidation-stat" onclick="changeProfSkill(this)">
                         <h4>Intimidation</h4>
                         <p class="skill-text">0</p>
                     </div>
-                    <div class="stat-holder">
+                    <div class="stat-holder medicine-stat" onclick="changeProfSkill(this)">
                         <h4>Medicine</h4>
                         <p class="skill-text">0</p>
                     </div>
-                    <div class="stat-holder">
+                    <div class="stat-holder perception-stat" onclick="changeProfSkill(this)">
                         <h4>Perception</h4>
                         <p class="skill-text">0</p>
                     </div>
-                    <div class="stat-holder">
+                    <div class="stat-holder performance-stat" onclick="changeProfSkill(this)">
                         <h4>Performance</h4>
                         <p class="skill-text">0</p>
                     </div>
-                    <div class="stat-holder">
+                    <div class="stat-holder persuasion-stat" onclick="changeProfSkill(this)">
                         <h4>Persuasion</h4>
                         <p class="skill-text">0</p>
                     </div>
-                    <div class="stat-holder">
+                    <div class="stat-holder slight-of-hand-stat" onclick="changeProfSkill(this)">
                         <h4>Sleight of Hand</h4>
                         <p class="skill-text">0</p>
                     </div>
-                    <div class="stat-holder">
+                    <div class="stat-holder stealth-stat" onclick="changeProfSkill(this)">
                         <h4>Stealth</h4>
                         <p class="skill-text">0</p>
                     </div>
-                    <div class="stat-holder">
+                    <div class="stat-holder survival-stat" onclick="changeProfSkill(this)">
                         <h4>Survival</h4>
                         <p class="skill-text">0</p>
                     </div>
                 </div>
                 <h3>Background Skills</h3>
-                <div class="skill-grid">
+                <div class="skill-grid background-skill-grid">
                     <div class="stat-holder">
                         <h4>Arcana</h4>
                         <p class="skill-text">0</p>

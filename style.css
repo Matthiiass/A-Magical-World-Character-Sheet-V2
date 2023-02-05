@@ -59,6 +59,27 @@ input:focus {
     background-color: #303030;
 }
 
+inactive-model {
+    display: none !important;
+}
+
+.notice-overlay{
+    position: fixed;
+    background-color: #751919;
+    border: 7px solid #ad2929;
+    width: 50rem;
+    padding: 1rem;
+    margin: 1% auto;
+    left: 50%;
+    transform: translate(-50%);
+    transition: opacity 0.25s;
+}
+
+.notice-overlay button {
+    margin-top: 0.5rem;
+    font-family: var(--jetbrains-font);
+}
+
 /* ------------------------------------------- */
 /* DROPDOWN TEXT */
 
@@ -119,6 +140,31 @@ input:focus {
     font-family: var(--macoda-font);
 }
 
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #1b1b1b;
+    border: 3px solid aliceblue;
+    margin: 7% auto;
+    padding: 1rem;
+    width: 40rem;
+    max-height: 60%;
+    overflow: auto;
+}
+
+.modal-content h1 {
+    font-weight: bold;
+}
+
 /* ------------------------------------------- */
 /* DATA HANDLING CELL */
 
@@ -177,6 +223,16 @@ input:focus {
 
 .general select {
     width: 141px;
+}
+
+.header-with-help {
+    display: flex;
+    align-items: center;
+    gap:0.5rem;
+}
+
+.help-icon {
+    cursor: pointer;
 }
 
 /* ------------------------------------------- */
@@ -370,6 +426,10 @@ input:focus {
 
 .skill-text {
     font-size: 1.1rem;
+}
+
+.main-skill-grid .stat-holder {
+    cursor: pointer;
 }
 
 /* ------------------------------------------- */

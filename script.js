@@ -36,7 +36,16 @@ function saveImport(importItem) {
 
 function exportData() {
     var obj = {
-        "test": "this is a test object"
+        characterName: document.querySelector('#character-name-input').value,
+        playerName: document.querySelector('#player-name-input').value,
+        magicCrest: document.querySelector('#crestSelect').value,
+        background: document.querySelector('#backgroundSelect').value,
+        maxHealth: max_health,
+        savedHealth: health,
+        maxMana: max_mana,
+        savedMana: mana,
+        maxSanity: max_sanity,
+        savedSanity: sanity
     }
 
     download(JSON.stringify(obj), 'test.json', 'text/plain')
@@ -175,7 +184,9 @@ function selectedBarChange(button) {
 }
 
 function calculateModifier(item) {
-    item.parentNode.querySelector('p').innerHTML = `(${Math.floor((parseInt(item.value) - 10) / 2)})`
+    let newValue = Math.floor((parseInt(item.value) - 10) / 2)
+    item.parentNode.querySelector('p').innerHTML = `(${newValue})`
+    updateSkills(item.parentNode.parentNode.querySelector('h4').innerHTML)
 }
 
 function healthSavingThrows(val) {
@@ -211,4 +222,81 @@ function updateBackgroundSkill(valueBox) {
     if (document.querySelector('#backgroundSelect').value == "student") {
         document.querySelector('.historySkill').innerHTML = num
     }
+}
+
+function changeProfSkill(obj) {
+    if (obj.hasAttribute('data-proficient')) {
+        obj.removeAttribute('data-proficient')
+        obj.querySelector('h4').style.removeProperty('color')
+        updateSkills()
+    }
+    else {
+        obj.setAttribute('data-proficient', 'true')
+        obj.querySelector('h4').style.color = '#fa70ff'
+        updateSkills()
+    }
+}
+
+function updateSkills(type) {
+    const profBonus = document.querySelector('.prof-bonus').value
+    
+    // STRENGTH SKILLS
+    let modifeir = parseInt(document.querySelector('.str-stat').querySelector("p").innerHTML.slice(1, -1))
+    let ath = document.querySelector('.athletics-stat')
+    ath.querySelector('p').innerHTML = ath.hasAttribute('data-proficient') ? modifeir + parseInt(profBonus) : modifeir
+
+    // DEXTERITY SKILLS
+    modifeir = parseInt(document.querySelector('.dex-stat').querySelector("p").innerHTML.slice(1, -1))
+    let acro = document.querySelector('.acrobatics-stat')
+    acro.querySelector('p').innerHTML = acro.hasAttribute('data-proficient') ? modifeir + parseInt(profBonus) : modifeir
+    let soh = document.querySelector('.slight-of-hand-stat')
+    soh.querySelector('p').innerHTML = soh.hasAttribute('data-proficient') ? modifeir + parseInt(profBonus) : modifeir
+    let stea = document.querySelector('.stealth-stat')
+    stea.querySelector('p').innerHTML = stea.hasAttribute('data-proficient') ? modifeir + parseInt(profBonus) : modifeir
+
+    // WISDOM SKILLS
+    modifeir = parseInt(document.querySelector('.wis-stat').querySelector("p").innerHTML.slice(1, -1))
+    let ins = document.querySelector('.insight-stat')
+    ins.querySelector('p').innerHTML = ins.hasAttribute('data-proficient') ? modifeir + parseInt(profBonus) : modifeir
+    let med = document.querySelector('.medicine-stat')
+    med.querySelector('p').innerHTML = med.hasAttribute('data-proficient') ? modifeir + parseInt(profBonus) : modifeir
+    let per = document.querySelector('.perception-stat')
+    per.querySelector('p').innerHTML = per.hasAttribute('data-proficient') ? modifeir + parseInt(profBonus) : modifeir
+    let sur = document.querySelector('.survival-stat')
+    sur.querySelector('p').innerHTML = sur.hasAttribute('data-proficient') ? modifeir + parseInt(profBonus) : modifeir
+
+    // CHARISMA SKILLS
+    modifeir = parseInt(document.querySelector('.cha-stat').querySelector("p").innerHTML.slice(1, -1))
+    let dec = document.querySelector('.deception-stat')
+    dec.querySelector('p').innerHTML = dec.hasAttribute('data-proficient') ? modifeir + parseInt(profBonus) : modifeir
+    let inti = document.querySelector('.intimidation-stat')
+    inti.querySelector('p').innerHTML = inti.hasAttribute('data-proficient') ? modifeir + parseInt(profBonus) : modifeir
+    let perf = document.querySelector('.performance-stat')
+    perf.querySelector('p').innerHTML = perf.hasAttribute('data-proficient') ? modifeir + parseInt(profBonus) : modifeir
+    let pers = document.querySelector('.persuasion-stat')
+    pers.querySelector('p').innerHTML = pers.hasAttribute('data-proficient') ? modifeir + parseInt(profBonus) : modifeir
+}
+
+window.onclick = function(event) {
+    if (event.target == document.querySelector('.modal')) {
+        document.querySelector('.modal').style.removeProperty('display')
+    }
+}
+
+function showCrestHelp() {
+    let modal = document.querySelector('.modal')
+    if (modal.children.length > 0) {
+        modal.firstElementChild.remove()
+    }
+    let crestSelected = document.querySelector('#crestSelect').value
+    let newMod = document.querySelector(`.${crestSelected.toLowerCase()}-modal`).firstElementChild.cloneNode(true)
+    modal.appendChild(newMod)
+    modal.style.display = "block"
+}
+
+function dimissNotice(item) {
+    item.style.opacity = 0
+    setTimeout(() => {
+        item.remove()
+    }, 1000)
 }
