@@ -1,3 +1,29 @@
+<!-- Soldier +30 (54 - 110)
+Blacksmith +25 (49 - 105)
+Doctor +23 (47 - 103)
+Inventor +21 (45 - 101)
+Engineer +21 (45 - 101)
+Adventurer +20 (44 - 100)
+Explorer +20 (44 - 100)
+Scientist +17 (41 - 97)
+Professor +17 (41 - 97)
+Wizard +17 (41 - 97)
+Contestant +16 (40 - 96)
+Noble +15 (39 - 95)
+Detective +14 (38 - 94)
+Attorney +14 (38 - 94)
+Student (None exclusive) +13 (37 - 93)
+Bard +11 (35 - 91)
+Thief +11 (35 - 91)
+Anthropologist +10 (34 - 90)
+Store Clerk +10 (34 - 90)
+Archaeologist +9 (33 - 89)
+Farmer +9 (33 - 89)
+Gardener +7 (31 - 87)
+Hermit +5 (29 - 85)
+
+(d8 + 2) * 8 -->
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -492,50 +518,56 @@
                 </div>
             </div>
             <div class="bars main-grid-cell">
-                <div>
-                    <h2>Health</h2>
-                    <div class="bar-container">
-                        <p id="health-display">100/100</p>
-                        <div class="bar-outline">
-                            <div class="inner-bar" id="health-bar"></div>
+                <div class="bars-splitter">
+                    <div>
+                        <h2>Health</h2>
+                        <div class="bar-container">
+                            <p id="health-display">100/100</p>
+                            <div class="bar-outline">
+                                <div class="inner-bar" id="health-bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h2>Mana</h2>
+                        <div class="bar-container">
+                            <p id="mana-display">100/100</p>
+                            <div class="bar-outline">
+                                <div class="inner-bar" id="mana-bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h2>Sanity</h2>
+                        <div class="bar-container">
+                            <p id="sanity-display">100/100</p>
+                            <div class="bar-outline">
+                                <div class="inner-bar" id="sanity-bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bars-button-holder">
+                        <div style="display: inline-flex; flex-direction: column; gap: 1rem;">
+                            <div class="bars-manipulation">
+                                <button type="button" class="bars-button" id="subtract-bars" onclick="barsSubract()">-</button>
+                                <input type="number" min="0" value="0" class="bars-unit">
+                                <button type="button" class="bars-button" id="add-bars" onclick="barsAdd()">+</button>
+                            </div>
+                            <div style="display: inline-flex; gap: 0.2rem;">
+                                <input type="checkbox" id="overstat">
+                                <p>Pass Max?</p>
+                            </div>
+                        </div>
+                        <div class="bars-selection">
+                            <button type="button" class="bar-select-button" id="healthButton" onclick="selectedBarChange(this)">Health</button>
+                            <button type="button" class="bar-select-button" id="manaButton" onclick="selectedBarChange(this)">Mana</button>
+                            <button type="button" class="bar-select-button" id="sanityButton" onclick="selectedBarChange(this)">Sanity</button>
                         </div>
                     </div>
                 </div>
                 <div>
-                    <h2>Mana</h2>
-                    <div class="bar-container">
-                        <p id="mana-display">100/100</p>
-                        <div class="bar-outline">
-                            <div class="inner-bar" id="mana-bar"></div>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <h2>Sanity</h2>
-                    <div class="bar-container">
-                        <p id="sanity-display">100/100</p>
-                        <div class="bar-outline">
-                            <div class="inner-bar" id="sanity-bar"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="bars-button-holder">
-                    <div style="display: inline-flex; flex-direction: column; gap: 1rem;">
-                        <div class="bars-manipulation">
-                            <button type="button" class="bars-button" id="subtract-bars" onclick="barsSubract()">-</button>
-                            <input type="number" min="0" value="0" class="bars-unit">
-                            <button type="button" class="bars-button" id="add-bars" onclick="barsAdd()">+</button>
-                        </div>
-                        <div style="display: inline-flex; gap: 0.2rem;">
-                            <input type="checkbox" id="overstat">
-                            <p>Pass Max?</p>
-                        </div>
-                    </div>
-                    <div class="bars-selection">
-                        <button type="button" class="bar-select-button" id="healthButton" onclick="selectedBarChange(this)">Health</button>
-                        <button type="button" class="bar-select-button" id="manaButton" onclick="selectedBarChange(this)">Mana</button>
-                        <button type="button" class="bar-select-button" id="sanityButton" onclick="selectedBarChange(this)">Sanity</button>
-                    </div>
+                    <h3>Base HP</h3>
+                    <input type="number" min="0" value="65" style="width: 4rem;">
                 </div>
             </div>
             <div class="main-stats main-grid-cell">
@@ -729,6 +761,39 @@
             </div>
             <div class="slots main-grid-cell">
                 <h1>Slots</h1>
+                <div>
+                    <div class="item-slot">
+                        <img src="./resources/circle.png" class="item-image">
+                    </div>
+                </div>
+                <div>
+                    <div class="item-slot">
+                        <img src="./resources/circle.png" class="item-image">
+                    </div>
+                    <div class="item-slot">
+                        <img src="./resources/circle.png" class="item-image">
+                    </div>
+                    <div class="item-slot">
+                        <img src="./resources/circle.png" class="item-image">
+                    </div>
+                </div>
+                <div>
+                    <div class="item-slot">
+                        <img src="./resources/circle.png" class="item-image">
+                    </div>
+                    <div class="item-slot">
+                        <img src="./resources/circle.png" class="item-image">
+                    </div>
+                    <div class="item-slot">
+                        <img src="./resources/circle.png" class="item-image">
+                    </div>
+                    <div class="item-slot">
+                        <img src="./resources/circle.png" class="item-image">
+                    </div>
+                    <div class="item-slot">
+                        <img src="./resources/circle.png" class="item-image">
+                    </div>
+                </div>
             </div>
             <div class="proficiencies main-grid-cell">
                 <h1>Proficiencies</h1>

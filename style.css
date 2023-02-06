@@ -240,6 +240,13 @@ inactive-model {
 
 .bars {
     display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.bars-splitter {
+    display: inline-flex;
     flex-direction: column;
     align-items: center;
     gap: 0.7rem;
@@ -430,6 +437,25 @@ inactive-model {
 
 .main-skill-grid .stat-holder {
     cursor: pointer;
+}
+
+/* ------------------------------------------- */
+/* SLOTS */
+
+.item-slot {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 20%;
+    border: 3px solid aliceblue;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item-image {
+    height: 70%;
+    color: aliceblue;
+    filter: brightness(1);
 }
 
 /* ------------------------------------------- */
